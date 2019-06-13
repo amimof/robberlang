@@ -27,6 +27,6 @@ func TestReverse(t *testing.T) {
 	expected := "desrever eb dluohs gnirts siht"
 	result := Reverse(s)
 	if expected != result {
-		t.Fatalf("Expeced '%s' but got '%s'", expected, result)
+		t.Fatalf("Expected '%s' but got '%s'", expected, result)
 	}
 }
