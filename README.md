@@ -1,5 +1,5 @@
 # robberlang
-[![Build Status](https://travis-ci.org/amimof/robberlang.svg?branch=master)](https://travis-ci.org/amimof/robberlang)
+[![Build Status](https://travis-ci.org/amimof/robberlang.svg?branch=master)](https://travis-ci.org/amimof/robberlang) [![Go Report Card](https://goreportcard.com/badge/github.com/amimof/robberlang)](https://goreportcard.com/report/github.com/amimof/robberlang)
 
 ---
 
