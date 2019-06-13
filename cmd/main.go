@@ -19,10 +19,12 @@ var (
 	host      string
 	port      int
 	decode    bool
+	reverse		bool
 )
 
 func init() {
 	flag.BoolVar(&decode, "d", false, "Treat string as encoded and try to decode it instead")
+	flag.BoolVar(&reverse, "r", false, "Return the text in reverse")
 }
 
 func usage() {
@@ -46,9 +48,17 @@ func main() {
 
 	// Encode/decode
 	if decode {
-		fmt.Println(robber.Decode(str))
+		if reverse {
+			fmt.Println(robber.Reverse(robber.Decode(str)))
+		} else {
+			fmt.Println(robber.Decode(str))
+		}
 	} else {
-		fmt.Println(robber.Encode(str))
+		if reverse {
+			fmt.Println(robber.Reverse(robber.Encode(str)))
+		} else {
+			fmt.Println(robber.Encode(str))
+		}
 	}
 
 }
