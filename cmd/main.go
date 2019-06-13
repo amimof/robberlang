@@ -19,7 +19,7 @@ var (
 	host      string
 	port      int
 	decode    bool
-	reverse		bool
+	reverse   bool
 )
 
 func init() {
