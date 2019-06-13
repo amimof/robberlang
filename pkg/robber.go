@@ -36,3 +36,12 @@ func Decode(s string) string {
 	}
 	return s
 }
+
+// Reverse will return s in reverse
+func Reverse(s string) string {
+	var r string
+	for _, v := range s {
+		r = fmt.Sprintf("%c%s", v, r)
+	}
+	return r
+}
