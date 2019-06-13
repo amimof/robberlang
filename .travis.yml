@@ -1,0 +1,48 @@
+sudo: false
+dist: stretch
+language: go
+go:
+  - "1.12"
+stages:
+- test
+- build
+- deploy
+before_install:
+- make dep
+jobs:
+  include:
+  - stage: test
+    name: "Verify"
+    script: 
+    - make checkfmt
+    - make fmt
+    - make vet 
+    - make gocyclo
+    - make golint 
+    - make ineffassign
+    - make misspell
+  - name: "Unit Test"
+    script:
+    - make test
+  - stage: build
+    script: 
+    - make linux 
+    - make darwin 
+    - make rpi
+    - make windows
+  - stage: deploy
+    name: "GitHub Releases"
+    script:
+    - make build
+    deploy:
+      provider: releases
+      api_key: ${GITHUB_API_KEY}
+      file: 
+      - out/robberlang-linux-amd64
+      - out/robberlang-darwin-amd64
+      - out/robberlang-linux-arm
+      - out/robberlang-windows-amd64.exe
+      skip_cleanup: true
+      draft: true
+      on:
+        tags: true
