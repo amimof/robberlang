@@ -21,3 +21,12 @@ func TestDecode(t *testing.T) {
 		t.Fatalf("Expected '%s' but got '%s'", expected, decoded)
 	}
 }
+
+func TestReverse(t *testing.T) {
+	s := "this string should be reversed"
+	expected := "desrever eb dluohs gnirts siht"
+	result := Reverse(s)
+	if expected != result {
+		t.Fatalf("Expeced '%s' but got '%s'", expected, result)
+	}
+}

@@ -36,3 +36,11 @@ func Decode(s string) string {
 	}
 	return s
 }
+
+func Reverse(s string) string {
+	var r string
+	for _, v := range s {
+		r = fmt.Sprintf("%c%s", v, r)
+	}
+	return r
+}
