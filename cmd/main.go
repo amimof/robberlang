@@ -27,9 +27,8 @@ func init() {
 	flag.BoolVar(&reverse, "r", false, "Return the text in reverse")
 }
 
-func usage() {
-	fmt.Fprint(os.Stderr, "Usage:\n")
-	fmt.Fprint(os.Stderr, "  robberlang <string> [-d]\n\n")
+func usage() string {
+	return fmt.Sprint("Usage:\n  robberlang [-d] <string>\n\n")
 }
 
 func main() {
@@ -39,7 +38,7 @@ func main() {
 
 	// Print usage if no string to encode/decode provided
 	if flag.Arg(0) == "" {
-		usage()
+		fmt.Fprint(os.Stderr, usage())
 		return
 	}
 
