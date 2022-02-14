@@ -33,6 +33,12 @@ jobs:
       run: make ineffassign
     - name: Misspell
       run: make misspell
+    
+  docker:
+    runs-on: self-hosted
+    steps:
+    - name: Sleep for 20 sec
+      run: docker run busybox "sleep 20"
       
   test:
     runs-on: self-hosted
