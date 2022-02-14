@@ -8,7 +8,7 @@ on:
 
 jobs:
   verify:
-    runs-on: example-runner
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
 
@@ -35,7 +35,7 @@ jobs:
       run: make misspell
       
   test:
-    runs-on: example-runner
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
 
@@ -52,7 +52,7 @@ jobs:
       run: make coverage
       
   build:
-    runs-on: example-runner
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
 
