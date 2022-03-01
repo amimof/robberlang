@@ -37,8 +37,8 @@ jobs:
   docker:
     runs-on: self-hosted
     steps:
-    - name: Sleep for 20 sec
-      run: docker run busybox sleep 20
+    - name: Sleep for 30 sec
+      run: docker run busybox sleep 30
       
   test:
     runs-on: self-hosted
