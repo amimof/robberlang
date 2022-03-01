@@ -8,7 +8,7 @@ on:
 
 jobs:
   verify:
-    runs-on: self-hosted
+    runs-on: lol
     steps:
     - uses: actions/checkout@v2
 
@@ -35,13 +35,13 @@ jobs:
       run: make misspell
     
   docker:
-    runs-on: self-hosted
+    runs-on: lol
     steps:
     - name: Sleep for 30 sec
       run: docker run busybox sleep 30
       
   test:
-    runs-on: self-hosted
+    runs-on: lol
     steps:
     - uses: actions/checkout@v2
 
@@ -58,7 +58,7 @@ jobs:
       run: make coverage
       
   build:
-    runs-on: self-hosted
+    runs-on: lol
     steps:
     - uses: actions/checkout@v2
 
